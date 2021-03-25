@@ -1,0 +1,15 @@
+<h1><%= @destination.name %></h1>
+<hr>
+
+<% @destination.most_recent.each do |posts| %>
+    <li><%= posts.title %></li>
+<% end %>
+
+<% featured = @destination.posts.select {|post| post.likes == @destination.total_likes}%>
+<% featured.each do |post2| %>
+Featured Post: <li><%= link_to post2.title, post2 %></li>
+<br>
+<% end %>
+<br>
+
+<li>Average Age: <%= @destination.average_age %></li>

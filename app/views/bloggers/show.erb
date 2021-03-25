@@ -1,0 +1,12 @@
+<h1><%= @blogger.name %></h1>
+<hr>
+<li>Total Likes: <%= @blogger.total_likes %></li>
+<br>
+
+<% featured = @blogger.posts.select {|post| post.likes == @blogger.total_likes}%>
+<% featured.each do |post2| %>
+Featured Post: <li><%= link_to post2.title, post2 %></li>
+<br>
+<% end %>
+
+

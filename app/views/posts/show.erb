@@ -1,0 +1,9 @@
+<h1><%= @post.title %></h1>
+<br>
+<%= @post.content %>
+<hr>
+<li>Author: <%= link_to @post.blogger.name, @post.blogger%></li>
+<br>
+<li>Destination: <%= link_to @post.destination.name, @post.destination%></li>
+
+<%= button_to "Like" %>
